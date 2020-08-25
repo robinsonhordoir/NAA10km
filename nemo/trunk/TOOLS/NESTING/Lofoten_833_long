@@ -1,0 +1,100 @@
+&input_output
+    iom_activated = true 
+/
+
+&coarse_grid_files    
+    parent_coordinate_file = '1_coordinates.nc'
+    parent_meshmask_file   = '1_mesh_mask.nc'  
+/    
+    
+&bathymetry    
+    new_topo = true
+    elevation_database = '/work-common/shared/imr/GEBCO/GEBCO_2014_2D.nc'
+    elevation_name = 'elevation'
+    smoothing = true
+    smoothing_factor = 0.6
+    nb_connection_pts = 3    
+    removeclosedseas = true
+    type_bathy_interp = 2
+    rn_hmin = 20.0 
+/   
+
+&nesting    
+    imin = 174
+    imax = 395
+    jmin = 210
+    jmax = 550
+    rho  = 4									
+    rhot = 4
+    bathy_update = true
+    updated_parent_file = '1_bathy_updated.nc'				
+/
+
+&vertical_grid    
+    ppkth = 15.3510136999999993
+    ppacr = 7.00000000000000000
+    ppdzmin = 1.0
+    pphmax  = 6000.
+    psur = -3958.95137127682892
+    pa0  = 0
+    pa1  = 0
+    N  = 75
+    ldbletanh   = .TRUE.
+    pa2        = 100.760928500000006
+    ppkth2      = 48.02989372000000
+    ppacr2      = 13.0000000000000000
+/    
+    
+&partial_cells    	
+    partial_steps = true
+    parent_bathy_meter = '1_bathy_meter.nc'
+    parent_batmet_name = 'Bathymetry'
+    e3zps_min = 20.
+    e3zps_rat = 0.1
+/
+
+&nemo_coarse_grid    
+    jpizoom = 1			
+    jpjzoom = 1			
+/
+&forcing_files		   
+    U_FILES = 'taux_1m.nc'
+!'dyna_grid_U.nc'                              ! needed for Offline
+    V_FILES =  'tauy_1m.nc'
+!'dyna_grid_V.nc'                              ! needed for Offline
+    FLX_FILES = 
+    'data_1m_salinity_nomask.nc',
+    'data_1m_potential_temperature_nomask.nc',
+    'flx.nc',
+    'geothermal_heating.nc'
+!    'river.orca.nc ',                         ! needed for Pisces
+!    'ndeposition.orca.nc',                    ! needed for Pisces 
+!    'dust.orca.nc',                           ! needed for Pisces 
+!    'bathy.orca.nc'                           ! needed for Pisces
+!'dyna_grid_T.nc',                             ! needed for Offline
+!'dyna_grid_W.nc'                              ! needed for Offline 
+/
+
+&interp
+    VAR_INTERP =
+    'votemper/bicubic',
+    'vosaline/bicubic'
+!    'dust/bilinear',
+!    'riverdic/bilinear',
+!    'riverpoc/bilinear',
+!    'riverdoc/bilinear',
+!    'nedep/bilinear',
+!    'bathy/bilinear'
+/
+
+&restart
+    restart_file = 'restart.nc'   
+    shlat = 0
+    dimg = false
+    dimg_output_file = 'test_dimg'
+    adatrj = 360.25 
+    interp_type = 'bilinear'
+/ 
+&restart_trc
+    restart_trc_file = 'restart_trc.nc'   
+/ 

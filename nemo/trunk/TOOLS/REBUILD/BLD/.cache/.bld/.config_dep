@@ -1,0 +1,14 @@
+DEP::nemo__calendar.f90     calendar::errioipsl::USE::stringop::USE
+DEP::nemo__defprec.f90      defprec
+DEP::nemo__errioipsl.f90    errioipsl
+DEP::nemo__flincom.f90      flincom::calendar::USE::errioipsl::USE::stringop::USE
+DEP::nemo__flio_rbld.f90    flio_rbld::IOIPSL::USE::defprec::USE
+DEP::nemo__fliocom.f90      fliocom::calendar::USE::defprec::USE::errioipsl::USE::stringop::USE
+DEP::nemo__getincom.f90     getincom::errioipsl::USE::stringop::USE
+DEP::nemo__histcom.f90      histcom::calendar::USE::errioipsl::USE::fliocom::USE::mathelp::USE::nc4interface::USE::stringop::USE
+DEP::nemo__ioipsl.f90       ioipsl::calendar::USE::errioipsl::USE::flincom::USE::fliocom::USE::getincom::USE::histcom::USE::mathelp::USE::restcom::USE::stringop::USE
+DEP::nemo__mathelp.f90      mathelp::errioipsl::USE::stringop::USE
+DEP::nemo__nc4interface.F90 nc4interface
+DEP::nemo__ncunderflow.f90  declare::declare::USE::mod_lec::USE::mod_nfdiag::USE
+DEP::nemo__restcom.f90      restcom::calendar::USE::errioipsl::USE::fliocom::USE::mathelp::USE::stringop::USE
+DEP::nemo__stringop.f90     stringop

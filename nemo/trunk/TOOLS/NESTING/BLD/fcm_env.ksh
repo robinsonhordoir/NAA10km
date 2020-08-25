@@ -1,0 +1,1 @@
+/work/budgell/nemo_v3_6_STABLE/TOOLS/NESTING/BLD/fcm_env.sh
