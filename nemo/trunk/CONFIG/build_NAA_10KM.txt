@@ -1,0 +1,1 @@
+./makenemo -m CRAY_XE -r ORCA2_LIM3 -n NAA_10KM add_key "key_xios2 key_bdy key_dynldf_c2d" del_key "key_diaeiv key_dynldf_c3d key_zdftmx key_diaobs key_asminc"

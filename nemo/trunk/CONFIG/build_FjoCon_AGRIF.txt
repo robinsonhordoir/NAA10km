@@ -1,0 +1,2 @@
+./makenemo -m CRAY_XE -r ORCA2_LIM -n FjoCon_AGRIF del_key "key_dynspg_flt key_zdftmx key_diaobs key_asminc" add_key "key_dynspg_ts key_bdy key_agrif key_dynldf_smag key_xios2 key_tide"
+
